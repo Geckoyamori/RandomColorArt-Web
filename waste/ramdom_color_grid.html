@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- キャンバスの設定 -->
+  <canvas id="canv" width="500" height="500"></canvas>
+  <script>
+    var ctx = document.getElementById("canv").getContext('2d');
+    
+    // 描画内容を指定する
+    // 背景を500×500の緑で描画
+    ctx.fillStyle = "rgb(0,128,0)";
+    ctx.fillRect(0, 0, 500, 500);
+    
+    // 格子の設定
+    ctx.strokeStyle = "white"
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    
+    // 縦線
+    for (var v = 50; v < 500; v+=50) {
+      ctx.moveTo(v, 0);
+      ctx.lineTo(v, 500);
+    }
+
+    // 横線
+    for (var h = 50; h < 500; h+=50) {
+      ctx.moveTo(0, h);
+      ctx.lineTo(500, h);
+    }
+    
+    // 描画内容を実行する
+    ctx.stroke();
+  </script>
+
+</body>
+
+</html>
